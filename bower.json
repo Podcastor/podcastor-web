@@ -1,0 +1,21 @@
+{
+  "name": "Podcastor",
+  "version": "0.0.1",
+  "homepage": "https://github.com/famoraes/podcastor",
+  "authors": [
+    "Fabiano Moraes <fabiano.moraes@outlook.com>"
+  ],
+  "description": "Podcast app made in angular for study pourposes.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.3",
+    "bootstrap": "~3.3.5"
+  }
+}
