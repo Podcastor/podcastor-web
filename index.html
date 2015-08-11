@@ -1,0 +1,25 @@
+<!doctype html>
+<html class="no-js" ng-app="podcastor">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{{appConfig.title}}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="src/assets/css/normalize.min.css">
+        <link rel="stylesheet" href="src/assets/css/main.css">
+
+        <script src="src/bower_components/modernizr/modernizr.js"></script>
+    </head>
+    <body>
+        <div ui-view></div>
+        <script src="src/bower_components/angular/angular.js"></script>
+        <script src="src/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="src/app.modules.js"></script>
+        <!-- Components -->
+        <script src="src/components/home/controller.js"></script>
+        <!-- End components -->
+        <script src="src/app.routes.js"></script>
+    </body>
+</html>
