@@ -9,17 +9,33 @@
 
         <link rel="stylesheet" href="src/assets/css/normalize.min.css">
         <link rel="stylesheet" href="src/assets/css/main.css">
-
+        <link rel="stylesheet" href="src/bower_components/bootstrap/dist/css/bootstrap.min.css">
         <script src="src/bower_components/modernizr/modernizr.js"></script>
     </head>
     <body>
-        <div ui-view></div>
+        <header id="header">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">Podcastor</a>
+                    <div>
+                </div>
+            </nav>
+        </header>
+        <div class="container-fluid">
+            <div ui-view></div>
+        </div>
         <script src="src/bower_components/angular/angular.js"></script>
         <script src="src/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="src/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="src/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- App Config -->
         <script src="src/app.modules.js"></script>
+        <!-- Services -->
+        <script src="src/shared/services/parser.js"></script>
         <!-- Components -->
         <script src="src/components/home/controller.js"></script>
-        <!-- End components -->
+        <!-- Routes -->
         <script src="src/app.routes.js"></script>
     </body>
 </html>

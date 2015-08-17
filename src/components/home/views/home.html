@@ -1,1 +1,22 @@
-
+<section id="home">
+    <form ng-submit="create()">
+        <input type="text" placeholder="Podcast URL" ng-model="podcast.url">
+        <button type="submit" name="button">Submit feed</button>
+    </form>
+    <article class="podcast" ng-repeat="podcast in podcasts">
+        <img ng-src="{{podcast.image}}" alt="" />
+        <span class="title">{{podcast.title}}</span>
+        <span class="description">{{podcast.description}}</span>
+        <a href="{{podcast.link}}" target="_blank">Access</a>
+        <ul class="episodes">
+            <li class="episode" ng-repeat="episode in podcast.entries">
+                <span class="title">{{episode.title}}</span>
+                <span class="author">{{episode.author}}</span>
+                <span class="date">{{episode.publishedDate}}</span>
+                <div class="description">
+                    {{episode.contentSnippet}}
+                </div>
+            </li>
+        </ul>
+    </article>
+</section>
