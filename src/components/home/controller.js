@@ -1,13 +1,4 @@
-app.controller('HomeController', ['$scope', '$rootScope', 'appConfig', 'podcastorParser', function($scope, $rootScope, appConfig, podcastorParser) {
+app.controller('HomeController', ['$scope', '$rootScope', 'appConfig', function($scope, $rootScope, appConfig) {
     $scope.appConfig = appConfig;
     $scope.podcasts = []
-
-    $scope.create = function() {
-        if($scope.podcast.url){
-            podcastorParser($scope.podcast.url).success(function(data){
-                $scope.podcasts.push(data.responseData.feed);
-            });
-        }
-    }
-
 }]);

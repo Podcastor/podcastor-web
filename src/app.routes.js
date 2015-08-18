@@ -15,7 +15,14 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
             url: '/',
             templateUrl: 'src/components/home/views/home.html',
             controller: 'HomeController',
-            controllerAs: 'ctrl'
+            controllerAs: 'ctrl',
+            loginRequired: true
+        })
+        .state('login', {
+            url: '/login',
+            templateUrl: 'src/components/auth/views/login.html',
+            controller: 'LoginController',
+            controlerAs: 'ctrl'
         })
         .state('404', {
             url: '/404',

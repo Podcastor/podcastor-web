@@ -13,7 +13,7 @@
         <script src="src/bower_components/modernizr/modernizr.js"></script>
     </head>
     <body>
-        <header id="header">
+        <header ng-if="currentUser !== undefined" id="header">
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
@@ -32,9 +32,10 @@
         <!-- App Config -->
         <script src="src/app.modules.js"></script>
         <!-- Services -->
-        <script src="src/shared/services/parser.js"></script>
+        <script src="src/shared/services/authentication.js"></script>
         <!-- Components -->
         <script src="src/components/home/controller.js"></script>
+        <script src="src/components/auth/controller.js"></script>
         <!-- Routes -->
         <script src="src/app.routes.js"></script>
     </body>
