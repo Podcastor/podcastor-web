@@ -11,17 +11,33 @@ app.constant('appConfig', {
 });
 
 // start up
-app.run(function($rootScope, $location, $state, $window, appConfig){
+app.run(function($rootScope, $location, $state, $window, $http, appConfig, podcastorSearch){
     $rootScope.appConfig = appConfig;
-    $rootScope.currentUser = JSON.parse($window.sessionStorage["currentUser"] || '{}');
+    $rootScope.currentUser = undefined;
+    $rootScope.podcasts = [];
 
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
-      var requireLogin = toState.loginRequired;
+        var requireLogin = toState.loginRequired;
 
-      if (requireLogin && typeof $rootScope.currentUser === 'undefined') {
-        event.preventDefault();
-        $state.go('login');
-      }
+        if($window.sessionStorage["currentUser"] !== undefined){
+            $rootScope.currentUser = JSON.parse($window.sessionStorage["currentUser"]);
+            $http.defaults.headers.common['Authorization'] = 'Token ' + $rootScope.currentUser.auth_token.key;
+        }
+
+        if (requireLogin && $rootScope.currentUser === undefined) {
+          event.preventDefault();
+          $state.go('login');
+        }else if ($rootScope.currentUser !== undefined && toState.url == "/login") {
+          event.preventDefault();
+          $state.go('home');
+        }
     });
+
+    $rootScope.searchPodcast = function(){
+        podcastorSearch(this.podcast.url).then(function(response) {
+            console.log('root', response);
+            $rootScope.podcasts = (response.data.results);
+        });
+    };
 
 });

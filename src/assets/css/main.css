@@ -56,18 +56,38 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+/* Podcasts cards */
 
+.podcast-card {
+    padding: 0 !important;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.14);
+}
+    .podcast-card .image {
+        width: 20%;
+        float: left;
+    }
+        .podcast-card .image img {
+            width: 100%;
+        }
+    .podcast-card .content {
+        width: 65%;
+        float: left;
+        margin-left: 10px;
+    }
+        .podcast-card .content .title {
+            display: block;
+            font-size: 22px;
+        }
+        .podcast-card .content .action {
+            display: block;
+        }
+        .podcast-card .content .action a{
 
-
-
-
-
-
-
-
-
-
-
+        }
 
 
 /* ==========================================================================

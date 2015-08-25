@@ -22,10 +22,12 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
             url: '/login',
             templateUrl: 'src/components/auth/views/login.html',
             controller: 'LoginController',
-            controlerAs: 'ctrl'
+            controlerAs: 'ctrl',
+            loginRequired: false
         })
         .state('404', {
             url: '/404',
-            templateUrl: 'app/shared/views/404.html'
+            templateUrl: 'app/shared/views/404.html',
+            loginRequired: false
         })
 }]);
