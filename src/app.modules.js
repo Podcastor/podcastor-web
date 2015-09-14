@@ -7,14 +7,13 @@ var app = angular.module('podcastor', ['ui.router']);
 // set our API host
 app.constant('appConfig', {
     title: 'Podcastor',
-    baseApi: 'http://127.0.0.1:8000/api'
+    baseApi: 'http://127.0.0.1:8000/api/v1'
 });
 
 // start up
-app.run(function($rootScope, $location, $state, $window, $http, appConfig, podcastorSearch){
+app.run(function($rootScope, $location, $state, $window, $http, appConfig, podcastorBackend){
     $rootScope.appConfig = appConfig;
-    $rootScope.currentUser = undefined;
-    $rootScope.podcasts = [];
+    rootScope.currentUser = undefined;
 
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
         var requireLogin = toState.loginRequired;
@@ -25,19 +24,12 @@ app.run(function($rootScope, $location, $state, $window, $http, appConfig, podca
         }
 
         if (requireLogin && $rootScope.currentUser === undefined) {
-          event.preventDefault();
-          $state.go('login');
+            event.preventDefault();
+            $state.go('login');
         }else if ($rootScope.currentUser !== undefined && toState.url == "/login") {
-          event.preventDefault();
-          $state.go('home');
+            event.preventDefault();
+            $state.go('home');
         }
     });
-
-    $rootScope.searchPodcast = function(){
-        podcastorSearch(this.podcast.url).then(function(response) {
-            console.log('root', response);
-            $rootScope.podcasts = (response.data.results);
-        });
-    };
 
 });

@@ -51,43 +51,53 @@ textarea {
     padding: 0.2em 0;
 }
 
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #fff !important;
+    -webkit-box-shadow:0 0 0 500px white inset;
+}
 
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
 
-/* Podcasts cards */
+/* Helper classes */
 
-.podcast-card {
-    padding: 0 !important;
-    margin: 5px 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    overflow: hidden;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.14);
+.show {
+    display: block !important;
 }
-    .podcast-card .image {
-        width: 20%;
-        float: left;
-    }
-        .podcast-card .image img {
-            width: 100%;
-        }
-    .podcast-card .content {
-        width: 65%;
-        float: left;
-        margin-left: 10px;
-    }
-        .podcast-card .content .title {
-            display: block;
-            font-size: 22px;
-        }
-        .podcast-card .content .action {
-            display: block;
-        }
-        .podcast-card .content .action a{
 
-        }
+/* Forms */
+
+input[type=text]:focus:not([readonly]),
+input[type=password]:focus:not([readonly]),
+input[type=email]:focus:not([readonly]),
+input[type=url]:focus:not([readonly]),
+input[type=time]:focus:not([readonly]),
+input[type=date]:focus:not([readonly]),
+input[type=datetime-local]:focus:not([readonly]),
+input[type=tel]:focus:not([readonly]),
+input[type=number]:focus:not([readonly]),
+input[type=search]:focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #2196f3;
+    box-shadow: 0 1px 0 0 #2196f3;
+}
+
+input[type=text]:focus:not([readonly])+label,
+input[type=password]:focus:not([readonly])+label,
+input[type=email]:focus:not([readonly])+label,
+input[type=url]:focus:not([readonly])+label,
+input[type=time]:focus:not([readonly])+label,
+input[type=date]:focus:not([readonly])+label,
+input[type=datetime-local]:focus:not([readonly])+label,
+input[type=tel]:focus:not([readonly])+label,
+input[type=number]:focus:not([readonly])+label,
+input[type=search]:focus:not([readonly])+label,
+textarea.materialize-textarea:focus:not([readonly])+label {
+    color: #2196f3;
+}
 
 
 /* ==========================================================================

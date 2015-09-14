@@ -15,11 +15,11 @@
     "tests"
   ],
   "dependencies": {
+    "Materialize": "materialize#~0.97.0",
     "angular": "~1.4.3",
-    "bootstrap": "~3.3.5",
-    "modernizr": "~2.8.3",
     "angular-ui-router": "~0.2.15",
+    "font-awesome": "~4.4.0",
     "jquery": "~2.1.4",
-    "font-awesome": "~4.4.0"
+    "modernizr": "~2.8.3"
   }
 }
