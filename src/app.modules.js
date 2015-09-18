@@ -11,9 +11,9 @@ app.constant('appConfig', {
 });
 
 // start up
-app.run(function($rootScope, $location, $state, $window, $http, appConfig, podcastorBackend){
+app.run(function($rootScope, $location, $state, $window, $http, appConfig){
     $rootScope.appConfig = appConfig;
-    rootScope.currentUser = undefined;
+    $rootScope.currentUser = undefined;
 
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
         var requireLogin = toState.loginRequired;

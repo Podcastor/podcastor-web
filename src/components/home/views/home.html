@@ -6,26 +6,13 @@
             <button type="submit" class="btn blue waves-effect waves-light">Search</button>
         </div>
     </form>
-    <div ng-repeat="podcast in podcasts" class="col s3">
-        <div class="card">
-            <div class="card-image">
-                <img ng-src="{{podcast.image}}">
-            </div>
-            <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4" ng-bind="podcast.title"></span>
-                <p ng-bind="podcast.description"></p>
-            </div>
-            <div class="card-action">
-                <a target="_blank" ng-href="{{podcast.site_url}}">Site</a>
-            </div>
-        </div>
-    </div>
+    <span ng-repeat="podcast in podcasts" ng-include="'src/shared/views/podcast-card.html'"></span>
     <div ng-if="podcasts.length == 0">
         <h5>Podcast not found.</h5>
         <p>
             You can add a new podcast, please enter with the podcast feed URL in the field bellow.
         </p>
-        <form class="form">
+        <form class="form" ng-submit="createFromFeed()">
             <div class="input-field col s12">
                 <input type="url" id="homeAdd" ng-model="feed.link">
                 <label for="homeAdd">Podcast feed</label>

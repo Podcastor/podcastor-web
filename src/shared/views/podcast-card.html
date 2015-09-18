@@ -1,0 +1,15 @@
+<div class="col s3">
+    <div class="card">
+        <div class="card-image">
+            <a href="" ng-click="bookmarkPodcast(podcast)"><i class="fa" ng-class="{'fa-heart-o': !podcast.bookmarked, 'fa-heart': podcast.bookmarked}"></i></a>
+            <img ng-src="{{podcast.image}}">
+        </div>
+        <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4" ng-bind="podcast.title"></span>
+            <p ng-bind="podcast.description"></p>
+        </div>
+        <div class="card-action">
+            <a target="_blank" ng-href="{{podcast.site_url}}">Site</a>
+        </div>
+    </div>
+</div>
